@@ -21,6 +21,8 @@ Get User by id
 http://localhost:5000/api/users/1
 
 
+![demo-video](demo-video.gif)
+
 # Node
 npm init -y
 npm install mssql
