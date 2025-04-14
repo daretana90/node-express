@@ -4,48 +4,65 @@
 
 node mssql.js
 
-# RUN SERVER
-
-## Run SQL SERVER
+## Run MySQL
 
 node mysql.js
 
-# Documentation
+## Run Express Server
 
-Install and configure SQL Express
-https://www.youtube.com/watch?v=Wr1AViAda3k
+node servers.js
 
+URL SERVER:
+Get all users
+
+http://localhost:5000/api/users
+
+Get User by id
+http://localhost:5000/api/users/1
+
+
+# Node
 npm init -y
+npm install mssql
+npm install mysql
 npm install msnodesqlv8 --save
+npm install cors
+npm install body-parser
+npm install express
+npm install dotenv
 
-SCRIPT PARA CONEXIÓN
-
+# Code
 const connectionString = "";
-const query = "SELECT \* FROM tb_users";
+const query = "SELECT * FROM tb_users";
 
 sql.query(connectionString, query, (error, rows) => {
 console.log(rows);
 });
 
-node "./next.js"
+# Documentation and links
 
-READ
+Install and configure SQL Express
+https://www.youtube.com/watch?v=Wr1AViAda3k
 
+How to connect Nodejs with SQL Server
 https://www.youtube.com/watch?v=zvvqUsvB540
 
-Para Typescript
+How to connect SQL Server with TypeScript
 https://www.youtube.com/watch?v=F6j9qF3iqBg
 
-Para correr con MySQL
 
-npm install mysql
+React JS CRUD Application | React JS + Node JS + Sql Server | React Hooks
+https://www.youtube.com/watch?v=9pBdDVRmC2s
 
+# Others
+
+MySQL
 ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '';
 
-node "./mysql.js"
+SQL SERVER
 
-Creación de store procedure
-
+### Create a store procedure
+ 
 CREATE PROCEDURE procedure_name
 AS
 SELECT \* FROM CURSO_DB.dbo.users;
@@ -54,38 +71,28 @@ CREATE PROCEDURE procedure_name1
 AS
 SELECT \* FROM [CURSO_DB].[dbo].[tb_users] WHERE id<=2;
 
-# Correr store procedure
-
+### Execute a store procedure
 EXEC procedure_name1;
 
-Resultado:
+Result:
 
 USE [CURSO_DB]
 GO
 EXEC [dbo].[procedure_name1]
 GO
 
-Obtener un usuario:
 
-# Crear
+### Create a store procedece with parameter
 
 CREATE PROCEDURE getUser @Id int
 AS
 SELECT \* from [dbo].[tb_users] WHERE id = @Id
 GO
-#Ejecutar
+Execute store procedure
+
 EXEC getUser @Id = 2;";
 
-#Leventar servidor
 
-npm install cors
-npm install body-parser
-npm install express
-npm install dotenv
-npm install mssql
 
-https://www.youtube.com/watch?v=9pBdDVRmC2s
 
-URL SERVER:
-Obtener usuarios
-http://localhost:5000/api/users
+
